@@ -116,6 +116,9 @@
 
 
 
+
+
+
   <!-- HERO -->
   <section class="flex items-center justify-center xl:pt-56 lg:pt-40 pt-36 xl:px-20 lg:px-10 px-5 ">
 
@@ -128,6 +131,39 @@
     </div>
 
   </section>
+
+
+  <div class="slider overflow-hidden w-full pt-20">
+    <div class="track flex items-center" id="track">
+
+      <!-- LOGOS (transparent style) -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg"
+        class="w-28 h-16 object-contain mr-10">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+        class="w-28 h-16 object-contain mr-10">
+
+    </div>
+  </div>
 
 
 
@@ -273,6 +309,33 @@
   <div class="cursor"></div>
   <div class="cursor-ring"></div>
 
+
+
+  <!-- slider  -->
+  <script>
+    const track = document.getElementById("track");
+
+    // duplicate content for infinite loop
+    track.innerHTML += track.innerHTML;
+
+    let position = 0;
+    let speed = 1.2; // control speed
+
+    function animate() {
+      position -= speed;
+
+      // reset when half scroll done
+      if (Math.abs(position) >= track.scrollWidth / 2) {
+        position = 0;
+      }
+
+      track.style.transform = `translateX(${position}px)`;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 
 
   <!-- projects -->
@@ -579,6 +642,11 @@
       height: 100px;
     }
   </style>
+
+
+
+
+
 </body>
 
 </html>
