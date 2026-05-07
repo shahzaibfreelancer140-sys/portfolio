@@ -1,0 +1,660 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+  font-family: syne;
+  src: url(/build/assets/fonts/Syne-Regular.ttf);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(/build/assets/fonts/Poppins-Regular.ttf);
+}
+
+
+
+body p {
+  font-family: Poppins;
+}
+
+body h1,
+h2,
+a,
+li {
+  font-family: syne;
+}
+
+
+
+
+
+/* rigsterbutton */
+.btn-neon {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: transparent;
+  color: #f5f5f5;
+  transition: background-color 0.6s ease, box-shadow 0.6s ease, color 0.6s ease;
+}
+
+.btn-neon svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.btn-neon svg rect {
+  fill: none;
+  stroke: #ff6f61;
+  stroke-width: 2px;
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  rx: 16;
+  ry: 16;
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.btn-neon:hover svg rect {
+  stroke-dashoffset: 0;
+}
+
+/* Background + glow will come AFTER line */
+.btn-neon:hover {
+  background-color: #ff6f61;
+  color: #fff;
+  box-shadow: 0 0 10px #E2499F,
+    0 0 40px #F89B25,
+    0 0 80px #F89B25;
+  transition-delay: 1s;
+  /* border ke baad bg+shadow */
+}
+
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  width: max-content;
+  animation: slide 20s linear infinite;
+}
+
+.active-dot {
+  background-color: #f97316;
+  /* Tailwind orange-500 */
+}
+/* rigsterbutton */
+
+
+
+
+/* buttongetstarted */
+:root {
+  --accent-color: #03e9f4;
+  --white-color: #fff;
+  --box-shadow: 0 0 5px #03e9f4,
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+/* ==== Button ==== */
+.button-animation {
+  margin-top: 66px;
+  position: relative;
+  display: inline-block;
+  padding: 26px 40px;
+  background: var(--white-color);
+  /* White BG */
+  border-radius: 9999px;
+  /* Fully rounded */
+  color: var(--accent-color);
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+
+.button-animation span {
+  position: absolute;
+  display: block;
+}
+
+/* Top */
+.button-animation span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color));
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+/* Right */
+.button-animation span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--accent-color));
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+/* Bottom */
+.button-animation span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--accent-color));
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+/* Left */
+.button-animation span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--accent-color));
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+/* Hover Effect */
+.button-animation:hover {
+  background: var(--accent-color);
+  color: var(--black);
+  box-shadow: var(--box-shadow);
+}
+/* buttongetstarted */
+
+
+
+
+
+
+/* centerimgbubbles */
+.bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bubbles span {
+  position: absolute;
+  border-radius: 50%;
+  background: #03e9f4;
+  filter: blur(25px);
+  opacity: 0.5;
+  animation: glow 8s infinite ease-in-out alternate;
+}
+
+/* Bigger premium bubbles */
+.bubbles span:nth-child(1) {
+  width: 90px;
+  height: 90px;
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.bubbles span:nth-child(2) {
+  width: 120px;
+  height: 120px;
+  top: 25%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+.bubbles span:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.bubbles span:nth-child(4) {
+  width: 85px;
+  height: 85px;
+  top: 55%;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+
+.bubbles span:nth-child(5) {
+  width: 110px;
+  height: 110px;
+  bottom: 25%;
+  right: 18%;
+  animation-delay: 2.5s;
+}
+
+.bubbles span:nth-child(6) {
+  width: 95px;
+  height: 95px;
+  top: 18%;
+  right: 30%;
+  animation-delay: 3s;
+}
+
+@keyframes glow {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.4;
+    background: #03e9f4;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0.8;
+    background: #ff00cc;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+    background: #ff9900;
+  }
+}
+/* centerimgbubbles */
+
+/* ulli */
+ul li a {
+  position: relative;
+  padding-bottom: 4px;
+  /* thoda space line ke liye */
+}
+
+ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #e2499f;
+  /* same logo/accent color */
+  transition: width 0.3s ease-in-out;
+}
+
+ul li a:hover::after {
+  width: 100%;
+}
+/* ulli */
+
+
+/* logoimg */
+.logo-shine img {
+  display: block;
+  animation: shinePulse 2.5s infinite ease-in-out;
+}
+
+/* Chamke effect */
+@keyframes shinePulse {
+  0% {
+    filter: brightness(1) contrast(1);
+  }
+
+  50% {
+    filter: brightness(1.4) contrast(1.2);
+  }
+
+  100% {
+    filter: brightness(1) contrast(1);
+  }
+}
+/* logoimg */
+
+/* rightimgbubbles */
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0.2;
+  }
+}
+
+.bg-bubbles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  /* chhota size */
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(3, 233, 244, 0.4), transparent 70%);
+  animation: pulse 6s ease-in-out infinite;
+  z-index: -1;
+  display: none;
+}
+
+.bg-bubbles::before,
+.bg-bubbles::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(3, 233, 244, 0.2), transparent 70%);
+  animation: pulse 7s ease-in-out infinite;
+}
+
+.bg-bubbles::before {
+  width: 150px;
+  /* smaller bubble */
+  height: 150px;
+  top: -20px;
+  left: -20px;
+}
+
+.bg-bubbles::after {
+  width: 120px;
+  /* smaller bubble */
+  height: 120px;
+  bottom: -20px;
+  right: -20px;
+  animation-delay: 3s;
+}
+/* rightimgbubbles */
+
+/* glow */
+@keyframes glowEffect {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+.custom-glow {
+  animation: glowEffect 3s ease-in-out infinite;
+}
+
+
+
+@keyframes innerGlow {
+  0% {
+    box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.7);
+  }
+
+  100% {
+    box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
+.inner-glow {
+  animation: innerGlow 3s ease-in-out infinite;
+}
+/* glow */
+
+/* buttonblue */
+.liquid {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #E2499F;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+  z-index: 0;
+  transition: 0.6s;
+}
+
+.liquid::after,
+.liquid::before {
+  position: absolute;
+  content: "";
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 0;
+  transform: translate(-25%, -75%);
+}
+
+.liquid::after {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  box-shadow: 0 0 10px 5px #7293ff, inset 0 0 5px #7293ff;
+  animation: animate 5s linear infinite;
+  opacity: 0.8;
+}
+
+.liquid::before {
+  border-radius: 40%;
+  box-shadow: 0 0 10px rgba(26, 26, 26, 0.5),
+    inset 0 0 5px rgba(26, 26, 26, 0.5);
+  background: rgba(26, 26, 26, 0.5);
+  animation: animate 7s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-25%, -75%) rotate(0);
+  }
+
+  100% {
+    transform: translate(-25%, -75%) rotate(360deg);
+  }
+}
+
+div:hover .liquid {
+  top: -120px;
+}
+/* buttonblue */
+
+/* footer */
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Click animation */
+.icon-wrapper.liked {
+  animation: heart-like 250ms linear;
+  box-shadow: 0 0 15px 2px currentColor;
+  /* image color ke hisaab se glow */
+}
+
+/* Optional unlike bounce */
+.icon-wrapper.unliked {
+  animation: heart-unlike 250ms linear;
+}
+
+/* Keyframes */
+@keyframes heart-like {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heart-unlike {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.7);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Hover glow using the image's color */
+.icon-wrapper img {
+  transition: filter 0.3s;
+}
+
+.icon-wrapper img {
+  animation: floatMove 3s infinite;
+  transition: filter 0.3s, transform 0.3s;
+}
+
+/* Stop animation on hover */
+.icon-wrapper:hover img {
+  animation-play-state: paused;
+}
+
+/* Continuous float/scale movement */
+@keyframes floatMove {
+
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+  }
+
+  25% {
+    transform: scale(1.05) translateY(-3px);
+  }
+
+  50% {
+    transform: scale(1.1) translateY(3px);
+  }
+
+  75% {
+    transform: scale(1.05) translateY(-3px);
+  }
+}
+
+/* Hover glow per icon */
+
+/* Instagram hover glow */
+.icon-wrapper:nth-child(1):hover img {
+  filter: drop-shadow(0 0 10px #E1306C) drop-shadow(0 0 20px #C13584);
+}
+
+/* Facebook hover glow */
+.icon-wrapper:nth-child(2):hover img {
+  filter: drop-shadow(0 0 10px #1877F2) drop-shadow(0 0 20px #4267B2);
+}
+
+/* Twitter hover glow */
+.icon-wrapper:nth-child(3):hover img {
+  filter: drop-shadow(0 0 10px #1DA1F2) drop-shadow(0 0 20px #0d95e8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.underline-animate {
+  position: absolute;
+  bottom: -15px; /* text ke neeche line */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 6px;
+  width: 0;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #E2499F, #F89B25);
+  transition: width 1s ease;
+}
+
+/* Active state jab scroll hoke visible ho */
+.underline-animate.active {
+  width: 80%; /* adjust kar sakte ho */
+}

@@ -1,0 +1,80 @@
+/* -----------------------------------------------------------
+   Modern High-Level Animations for Language Section
+   Triggered via AOS (data-aos="modern-...")
+----------------------------------------------------------- */
+
+/* 1. Elegant Text Reveal (Lift up with blur) */
+[data-aos="modern-lift-up"] {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(10px);
+  transition-property: transform, opacity, filter;
+}
+
+[data-aos="modern-lift-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* 2. Image Scale & Glare Effect */
+[data-aos="modern-scale"] {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition-property: transform, opacity;
+}
+
+[data-aos="modern-scale"].aos-animate {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* 3. Card Entry (Staggered slide from side with slight rotation) */
+[data-aos="modern-card-left"] {
+  opacity: 0;
+  transform: translateX(-50px) rotate(-2deg);
+  transition-property: transform, opacity;
+}
+
+[data-aos="modern-card-left"].aos-animate {
+  opacity: 1;
+  transform: translateX(0) rotate(0);
+}
+
+[data-aos="modern-card-right"] {
+  opacity: 0;
+  transform: translateX(50px) rotate(2deg);
+  transition-property: transform, opacity;
+}
+
+[data-aos="modern-card-right"].aos-animate {
+  opacity: 1;
+  transform: translateX(0) rotate(0);
+}
+
+/* 4. Tag/Badge Pop-in (Elastic scale) */
+[data-aos="modern-pop"] {
+  opacity: 0;
+  transform: scale(0.5);
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); /* Elastic elastic */
+}
+
+[data-aos="modern-pop"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Apply staggered timings via generic delay classes if needed, 
+   but AOS handles delays well via data-aos-delay */
+
+/* Hover effects for interactive feel */
+.hover-float:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}

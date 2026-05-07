@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learnexa</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+</head>
+
+
+<body class="overflow-x-hidden">
+  <!-- navbar start -->
+  <nav style="background-image: url('./assets/img/bg.png');"
+    class="2xl:h-[1020px] lg:h-[813px] h-[664px] bg-cover bg-no-repeat bg-center">
+    <div class="flex justify-between items-center 2xl:px-14 lg:px-10 px-5 xl:pt-10 lg:pt-5 pt-5">
+
+      <!-- Logo -->
+      <div>
+        <img src="./assets/img/logo.png" alt="">
+      </div>
+
+      <!-- Desktop Menu (lg+) -->
+      <div class="hidden lg:block">
+        <ul class="bg-[#EFEFEF] rounded-full py-3 px-5 flex gap-10">
+          <li><a href="#" class="text-lg text-[#3F3F3F]">How It Works</a></li>
+          <li><a href="#" class="text-lg text-[#3F3F3F]">Subjects</a></li>
+          <li><a href="#" class="text-lg text-[#3F3F3F]">Tutors</a></li>
+          <li><a href="#" class="text-lg text-[#3F3F3F]">Pricing</a></li>
+          <li><a href="#" class="text-lg text-[#3F3F3F]">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Toggle Button (sm + md) -->
+      <button id="menuBtn" class="lg:hidden text-3xl text-[#3F3F3F]">
+        ☰
+      </button>
+
+    </div>
+
+    <!-- Mobile / Tablet Menu (sm + md) -->
+    <div id="mobileMenu" class="lg:hidden fixed inset-0 bg-[#EFEFEF] hidden
+           transform translate-y-[-20px] opacity-0
+           transition-all duration-300 ease-in-out z-50
+           px-6 py-6">
+
+      <!-- Close Button -->
+      <div class="flex justify-end">
+        <button id="closeBtn" class="text-3xl text-[#3F3F3F]">
+          ✕
+        </button>
+      </div>
+
+      <!-- Menu Items -->
+      <ul class="h-auto w-full flex flex-col justify-center items-center gap-6 text-center">
+        <li><a href="#" class="text-lg text-[#3F3F3F]">How It Works</a></li>
+        <li><a href="#" class="text-lg text-[#3F3F3F]">Subjects</a></li>
+        <li><a href="#" class="text-lg text-[#3F3F3F]">Tutors</a></li>
+        <li><a href="#" class="text-lg text-[#3F3F3F]">Pricing</a></li>
+        <li><a href="#" class="text-lg text-[#3F3F3F]">FAQ</a></li>
+      </ul>
+    </div>
+
+
+    <!-- Empowering Every Mind to Learn Smarter start-->
+    <div class="relative 2xl:px-20 lg:px-10 px-5">
+      <div class="absolute lg:top-14 top-6 2xl:left-56 lg:left-48 md:left-40 left-4 animate-float delay-0">
+        <img src="./assets/img/pencil.png" class="2xl:w-auto lg:w-24 md:w-20 w-14" />
+      </div>
+
+      <div
+        class="absolute 2xl:top-24 lg:top-32 md:top-20 top-12 lg:right-24 md:right-24 right-4 animate-float delay-1000">
+        <img src="./assets/img/globle.png" class="2xl:w-auto lg:w-28 md:w-24 w-14" />
+      </div>
+
+      <div
+        class="absolute 2xl:-bottom-20 lg:bottom-8 bottom-0 2xl:left-24 lg:left-28 md:left-20 left-4 md:block hidden animate-float delay-2000">
+        <img src="./assets/img/hat.png" class="2xl:w-auto lg:w-24 md:w-24 w-20" />
+      </div>
+
+      <div
+        class="absolute 2xl:-bottom-72 lg:-bottom-28 md:-bottom-24 -bottom-24 lg:right-52 md:right-32 right-7 animate-float delay-3000">
+        <img src="./assets/img/charts.png" class="2xl:w-auto lg:w-28 md:w-20 w-16" />
+      </div>
+
+      <div
+        class="absolute 2xl:-bottom-72 lg:-bottom-32 -bottom-24 2xl:left-[588px] lg:left-72 md:left-56 left-12 animate-float delay-4000">
+        <img src="./assets/img/books.png" class="2xl:w-auto lg:w-24 md:w-20 w-16" />
+      </div>
+      <div class="flex flex-col items-center justify-center text-center  px-4 lg:pt-44 pt-28">
+        <h1
+          class="2xl:text-7xl lg:text-5xl text-3xl 2xl:leading-[90px] lg:leading-[62px] leading-10 font-bold text-[#0E0E0E] animate-fade-in-up">
+          Empowering Every <br class="md:block hidden" />
+          Mind to Learn Smarter
+        </h1>
+
+        <p class="pt-7 text-lg  lg:leading-8 leading-7 font-normal text-[#505050] animate-fade-in-up delay-1000">
+          Personalized AI-guided tutoring for students, teachers, and parents — turning <br class="md:block hidden">
+          learning into lasting
+          confidence.
+        </p>
+
+        <button
+          class="mt-7 bg-black text-white px-7 py-2 rounded-lg xl:text-lg lg:text-base text-lg leading-8 font-bold animate-fade-in-up delay-2000">
+          Get Started
+        </button>
+      </div>
+
+    </div>
+    <!-- Empowering Every Mind to Learn Smarter end-->
+  </nav>
+  <!-- navbar end -->
+
+  <!-- real impact start  -->
+  <section>
+    <div class="w-full 2xl:px-10 lg:px-10 px-5 2xl:pt-12 pt-6 overflow-x-hidden overflow-hidden">
+      <div class="lg:flex md:flex justify-between items-center gap-4">
+        <div>
+          <img src="./assets/img/Make.png" class="hover-scale w-full" alt="" data-aos="fade-right"
+            data-aos-duration="1000">
+        </div>
+        <div class="lg:pt-0 md:pt-0 pt-4">
+          <img src="./assets/img/ai center img.png" class="hover-scale w-full" alt="" data-aos="zoom-in"
+            data-aos-duration="1000" data-aos-delay="200">
+        </div>
+        <div class="lg:pt-0 md:pt-0 pt-4">
+          <img src="./assets/img/Real.png" alt="" class="hover-scale w-full" data-aos="fade-left"
+            data-aos-duration="1000" data-aos-delay="400">
+        </div>
+      </div>
+      <div class="lg:flex md:flex justify-between items-center gap-4">
+        <div class="lg:pt-0 md:pt-0 pt-4">
+          <img src="./assets/img/left sa img.png" class="hover-scale w-full" alt="" data-aos="fade-up-right"
+            data-aos-duration="1000">
+        </div>
+        <div class="lg:pt-0 md:pt-0 pt-4 flex justify-center">
+          <img src="./assets/img/sec center img.png" class="hover-scale w-full" alt="" data-aos="zoom-in-up"
+            data-aos-duration="1000" data-aos-delay="200">
+        </div>
+        <div class="lg:pt-0 md:pt-0 pt-4">
+          <img src="./assets/img/Impact.png" alt="" class="hover-scale w-full" data-aos="fade-up-left"
+            data-aos-duration="1000" data-aos-delay="400">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- real impact end  -->
+
+
+  <!-- LuxRepetitor.ai start -->
+  <section>
+    <div style="background-image: url('./assets/img/black\ bg.png');"
+      class="bg-cover bg-center bg-no-repeat 2xl:h-[1055px] lg:h-[852px] md:h-[855px] h-[900px] w-full lg:mt-52 mt-28">
+      <div>
+        <div class="relative">
+
+          <div>
+            <div
+              class="absolute 2xl:top-28 lg:top-20 md:top-20 top-12 2xl:left-[557px] xl:left-80 lg:left-56 md:left-60 left-20">
+              <img src="./assets/img/How.png" class="2xl:w-full lg:w-40 md:w-40 w-28 animate-float delay-0" alt="">
+            </div>
+
+            <div class="absolute 2xl:right-72 lg:right-44 md:right-28 right-10 top-5">
+              <img src="./assets/img/aviater.png" class="2xl:w-full lg:w-52 md:w-40 w-28 animate-float delay-1000"
+                alt="">
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="absolute 2xl:top-56 lg:top-40 md:top-40 top-28 2xl:left-[420px] xl:left-56 lg:left-32 md:left-40 left-8">
+              <img src="./assets/img/brain.png" class="2xl:w-full lg:w-48 md:w-36 w-28 animate-float delay-2000" alt="">
+            </div>
+
+            <div class="absolute lg:right-28 md:right-16 right-6 2xl:top-80 lg:top-60 md:top-52 top-36">
+              <img src="./assets/img/LuxRepetitor.ai.png"
+                class="2xl:w-full lg:w-96 md:w-64 w-44 animate-float delay-3000 hover-scale" alt="">
+            </div>
+
+            <div
+              class="absolute 2xl:top-[528px] lg:top-[400px] md:top-[344px] top-64 2xl:left-96 xl:left-60 lg:left-36 md:left-40 left-11">
+              <img src="./assets/img/Works.png" class="2xl:w-full lg:w-48 md:w-40 w-28 animate-float delay-4000" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" 2xl:pt-[686px] lg:pt-[513px] md:pt-[422px] pt-[349px] 2xl:px-14 lg:px-10 px-5">
+        <div class="lg:flex justify-between lg:text-start text-center" data-aos="fade-up" data-aos-duration="1000">
+          <div>
+            <span class="text-xl font-medium text-[#FFFFFF]">01</span>
+          </div>
+          <div class="lg:pr-10 pr-0 lg:pt-0 pt-2">
+            <span class="text-xl font-medium text-[#FFFFFF] ">
+              Tell Us What You Need
+            </span>
+          </div>
+          <div class="lg:pr-2 pr-0 lg:pt-0 pt-2">
+            <span class="text-xl leading-8 font-normal text-[#3F3F3F]">
+              Choose your grade, subjects, and goals — from quick <br class="lg:block hidden"> practice to
+              exam prep.
+            </span>
+          </div>
+        </div>
+
+        <div class="pt-10 lg:flex justify-between lg:text-start text-center" data-aos="fade-up" data-aos-duration="1000"
+          data-aos-delay="200">
+          <div>
+            <span class="text-xl font-medium text-[#FFFFFF]">02</span>
+          </div>
+          <div>
+            <span class="text-xl font-medium text-[#FFFFFF]">
+              Learn With Smart Guidance
+            </span>
+          </div>
+          <div>
+            <span class="text-xl leading-8 font-normal text-[#3F3F3F]">
+              Our AI tutor explains, tests, and adapts lessons to your <br class="lg:block hidden"> learning pace.
+            </span>
+          </div>
+        </div>
+
+        <div class="pt-10 lg:flex justify-between lg:text-start text-center" data-aos="fade-up" data-aos-duration="1000"
+          data-aos-delay="400">
+          <div>
+            <span class="text-xl font-medium text-[#FFFFFF]">03</span>
+          </div>
+          <div class="lg:pr-5 pr-0">
+            <span class="text-xl font-medium text-[#FFFFFF] ">
+              Track Progress & Improve
+            </span>
+          </div>
+          <div class="lg:pr-3 pr-0">
+            <span class="text-xl leading-8 font-normal text-[#3F3F3F]">
+              Get real-time insights, achievements, and support for <br class="lg:block hidden"> consistent growth.
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- LuxRepetitor.ai end -->
+
+  <!-- Language start -->
+  <section>
+    <div style="background-image: url('./assets/img/languagebg.png');">
+      <!-- 1 border card  -->
+      <div class="md:flex">
+        <div
+          class="md:w-1/4 border-l-[1px] md:border-t-0 border-t-[1px] border-r-[1px] md:border-r-0  border-[#666666]/60">
+          <div class="xl:pt-36 lg:pt-16 md:pt-8 pt-36">
+            <h1 class="xl:text-[115px] lg:text-[75px] text-6xl leading-[182px] font-bold text-[#0E0E0E]"
+              data-aos="modern-lift-up" data-aos-duration="1200">
+              LANGUAGE</h1>
+          </div>
+        </div>
+        <div class="w-1/4 border-l-[1px] border-[#666666]/60"></div>
+        <div class="w-1/4 border-l-[1px] border-[#666666]/60"></div>
+        <div class="w-1/4 border-l-[1px] border-r-[1px] border-[#666666]/60"></div>
+      </div>
+
+      <!-- 2 border card  -->
+      <div class="md:flex">
+        <div
+          class="md:w-1/4 border-t-[1px] border-l-[1px] xl:border-b-[1px] lg:border-b-[1px] md:border-b-[1px] md:border-r-0 border-r-[1px] border-[#666666]/60">
+          <div class="pt-3 flex justify-center">
+            <img src="./assets/img/hat2.png" alt="" data-aos="modern-scale" data-aos-duration="1000">
+          </div>
+        </div>
+        <div class="md:w-1/4 md:border-t-[1px] md:border-b-[1px] md:border-l-[1px] border-[#666666]/60"></div>
+        <div class="md:w-1/4 border-t-[1px] border-r-[1px] border-b-[1px] border-l-[1px] border-[#666666]/60">
+          <div class="xl:p-6 lg:p-4 p-2">
+            <div>
+              <p class="lg:text-3xl text-xl font-medium text-[#051E1B]" data-aos="modern-lift-up" data-aos-delay="100">
+                Serbo-Croatian
+              </p>
+            </div>
+            <div class="md:flex items-center gap-3 xl:pt-60 lg:pt-40 md:pt-36 pt-40">
+              <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop" data-aos-delay="200">
+                <p class="lg:text-base text-xs font-normal text-[#4B7671]">Native born</p>
+              </div>
+              <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop" data-aos-delay="300">
+                <p class="lg:text-base text-xs font-normal text-[#4B7671]">Fluent</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="md:w-1/4 md:border-l-0 border-l-[1px] border-t-[1px] border-r-[1px] border-b-[1px] border-[#666666]/60">
+          <div class="flex flex-col justify-between xl:p-6 lg:p-4 p-2">
+            <div>
+              <p class="lg:text-3xl text-xl font-medium text-[#051E1B]" data-aos="modern-lift-up" data-aos-delay="100">
+                Classic Latin
+              </p>
+            </div>
+            <div class="md:flex items-center gap-3 xl:pt-60 lg:pt-40 md:pt-36 pt-40">
+              <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop" data-aos-delay="200">
+                <p class="lg:text-base text-xs font-normal text-[#4B7671]">Reading</p>
+              </div>
+              <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop" data-aos-delay="300">
+                <p class="lg:text-base text-xs font-normal text-[#4B7671]">Writing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 border card  -->
+      <div class="md:flex">
+        <div class="md:w-1/4 border-b-[1px] border-l-[1px] md:border-r-0 border-r-[1px] border-[#666666]/60">
+          <div class="xl:p-6 lg:p-4 p-2">
+            <div class="flex lg:gap-[104px] gap-4">
+              <div class="flex flex-col justify-between">
+                <div>
+                  <p class="lg:text-3xl text-xl font-medium text-[#051E1B]" data-aos="modern-lift-up"
+                    data-aos-delay="100">English
+                  </p>
+                </div>
+                <div>
+                  <div class="md:flex items-center gap-3 xl:pt-60 lg:pt-40 md:pt-36 pt-40">
+                    <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop"
+                      data-aos-delay="200">
+                      <p class="lg:text-base text-xs font-normal text-[#4B7671]">Fluent</p>
+                    </div>
+                    <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop"
+                      data-aos-delay="300">
+                      <p class="lg:text-base text-xs font-normal text-[#4B7671]">Conversation</p>
+                    </div>
+                    <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block xl:block hidden" data-aos="modern-pop"
+                      data-aos-delay="400">
+                      <p class="lg:text-base text-xs font-normal text-[#4B7671]">Reading</p>
+                    </div>
+                  </div>
+                  <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block xl:hidden block" data-aos="modern-pop"
+                    data-aos-delay="400">
+                    <p class="lg:text-base text-xs font-normal text-[#4B7671]">Reading</p>
+                  </div>
+                  <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block mt-2" data-aos="modern-pop"
+                    data-aos-delay="500">
+                    <p class="lg:text-base text-xs font-normal text-[#4B7671]">Writing</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="md:w-1/4 border-b-[1px] border-l-[1px] md:border-r-0 border-r-[1px] border-[#666666]/60">
+          <div class="xl:p-6 lg:p-4 p-2">
+            <div>
+              <p class="lg:text-3xl text-xl font-medium text-[#051E1B]" data-aos="modern-lift-up" data-aos-delay="100">
+                Russian
+              </p>
+            </div>
+            <div>
+              <div class="md:flex items-center lg:gap-3 md:gap-2 gap-3 xl:pt-60 lg:pt-40 md:pt-36 pt-40">
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop"
+                  data-aos-delay="200">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Intermediate</p>
+                </div>
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop"
+                  data-aos-delay="300">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Conversation</p>
+                </div>
+              </div>
+              <div class="lg:flex items-center gap-3 mt-2">
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop"
+                  data-aos-delay="400">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Reading</p>
+                </div>
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop"
+                  data-aos-delay="500">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Writing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/4 border-r-[1px] border-b-[1px] border-l-[1px] border-[#666666]/60">
+
+        </div>
+        <div
+          class="md:w-1/4 border-r-[1px] border-b-[1px] md:border-l-0 border-l-[1px] border-[#666666]/60 lg:p-6 p-2 ">
+          <div class="xl:pr-16 pr-0 flex justify-center md:pt-0 pt-12">
+            <img src="./assets/img/charts2.png" class="w-full" alt="" data-aos="modern-scale" data-aos-duration="1000">
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 border card  -->
+      <div class="md:flex">
+        <div class="md:w-1/4 border-b-[1px] border-l-[1px] md:border-r-0 border-r-[1px] border-[#666666]/60">
+          <div class="xl:p-6 lg:p-4 p-2">
+            <div class="flex justify-center lg:pt-16 md:pt-8 pt-0">
+              <img src="./assets/img/globle2.png" alt="" data-aos="modern-scale" data-aos-duration="1000">
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/4 border-b-[1px] border-l-[1px] border-[#666666]/60">
+          <!-- <div class="p-6">
+                <div>
+                    <p class="lg:text-3xl text-xl font-medium text-[#051E1B] reveal-blur">Russian
+                    </p>
+                </div>
+                <div>
+                    <div class="md:flex items-center gap-3 lg:pt-60 pt-40">
+                        <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block">
+                            <p class="lg:text-base text-xs font-normal text-[#4B7671]">Intermediate</p>
+                        </div>
+                        <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block">
+                            <p class="lg:text-base text-xs font-normal text-[#4B7671]">Conversation</p>
+                        </div>
+                    </div>
+                    <div class="lg:flex items-center gap-3 mt-2">
+                        <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block">
+                            <p class="lg:text-base text-xs font-normal text-[#4B7671]">Reading</p>
+                        </div>
+                        <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block">
+                            <p class="lg:text-base text-xs font-normal text-[#4B7671]">Writing</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="md:w-1/4 border-r-[1px] border-b-[1px] border-l-[1px] border-[#666666]/60">
+          <div class="xl:p-6 lg:p-4 p-2">
+            <div>
+              <p class="lg:text-3xl text-xl font-medium text-[#051E1B]" data-aos="modern-lift-up" data-aos-delay="100">
+                German</p>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 xl:pt-60 lg:pt-40 md:pt-36 pt-40">
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop"
+                  data-aos-delay="200">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Fluent</p>
+                </div>
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block " data-aos="modern-pop"
+                  data-aos-delay="300">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Conversation</p>
+                </div>
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block xl:block hidden" data-aos="modern-pop"
+                  data-aos-delay="400">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Reading</p>
+                </div>
+              </div>
+              <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block xl:hidden block" data-aos="modern-pop"
+                data-aos-delay="400">
+                <p class="lg:text-base text-xs font-normal text-[#4B7671]">Reading</p>
+              </div>
+              <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block mt-2" data-aos="modern-pop"
+                data-aos-delay="500">
+                <p class="lg:text-base text-xs font-normal text-[#4B7671]">Writing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/4 border-r-[1px] border-b-[1px] md:border-l-0 border-l-[1px] border-[#666666]/60">
+          <div class="xl:p-6 lg:p-4 p-2">
+            <div>
+              <p class="lg:text-3xl text-xl font-medium text-[#051E1B]" data-aos="modern-lift-up" data-aos-delay="100">
+                French</p>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 xl:pt-60 lg:pt-40 md:pt-36 pt-40">
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop"
+                  data-aos-delay="200">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Basic</p>
+                </div>
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block" data-aos="modern-pop"
+                  data-aos-delay="300">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Conversation</p>
+                </div>
+                <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block xl:block hidden" data-aos="modern-pop"
+                  data-aos-delay="400">
+                  <p class="lg:text-base text-xs font-normal text-[#4B7671]">Reading</p>
+                </div>
+              </div>
+              <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block xl:hidden block" data-aos="modern-pop"
+                data-aos-delay="400">
+                <p class="lg:text-base text-xs font-normal text-[#4B7671]">Reading</p>
+              </div>
+              <div class="bg-[#f6f6f6] py-1 px-2 rounded-full inline-block mt-2" data-aos="modern-pop"
+                data-aos-delay="500">
+                <p class="lg:text-base text-xs font-normal text-[#4B7671]">Writing</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Language end -->
+
+
+  <!-- footer start -->
+  <footer class="bg-black text-white mt-32">
+    <div class="pt-[75px] 2xl:px-12 lg:px-10 px-5">
+
+      <!-- MAIN GRID -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+        <!-- LEFT CONTENT -->
+        <div>
+          <h1 class="text-3xl xl:text-6xl font-semibold mb-6 footer-title">
+            GET IN TOUCH.
+          </h1>
+
+          <ul class="space-y-5 text-[#F9F9F9] text-sm xl:text-base font-medium contact-list">
+            <li class="flex items-center gap-4 contact-item">
+              <div>
+                <img src="./assets/img/footer call icon.png" alt="">
+              </div>
+              <p>+1 (555) 482-7391</p>
+            </li>
+            <li class="flex items-center gap-4 contact-item">
+              <div>
+                <img src="./assets/img/footer mail box.png" alt="">
+              </div>
+              <p>Hello@Learnexa.io</p>
+            </li>
+            <li class="flex items-center gap-4 contact-item">
+              <div>
+                <img src="./assets/img/footer linkedin.png" alt="">
+              </div>
+              <p>Hello@Learnexa.io</p>
+            </li>
+            <li class="flex items-start gap-4 contact-item">
+              <div>
+                <img src="./assets/img/footer location +.png" alt="">
+              </div>
+              <p>
+                Learnexa HQ, 245 Innovation Drive
+                Suite 402 <br class="block md:hidden"> San <br class="md:block hidden"> Francisco, CA 94107
+                United States
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="">
+
+          <form class="space-y-5">
+
+            <!-- NAME + EMAIL -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="footer-input-group">
+                <label class="block text-[10px] font-medium mb-2 text-white">NAME</label>
+                <input type="text" placeholder="Enter Your Name Here"
+                  class="w-full text-[#FFFFFF] bg-transparent border border-[#666666] rounded-lg px-4 py-2 text-xs font-normal focus:outline-none focus:border-[#666666]" />
+              </div>
+
+              <div class="footer-input-group">
+                <label class="block text-[10px] font-medium mb-2 text-white">EMAIL</label>
+                <input type="email" placeholder="Enter Your Email Here"
+                  class="w-full text-[#FFFFFF] bg-transparent border border-[#666666] rounded-lg px-4 py-2 text-xs font-normal focus:outline-none focus:border-[#666666]" />
+              </div>
+            </div>
+
+            <!-- MESSAGE -->
+            <div class="pt-5 footer-input-group">
+              <label class="block text-[10px] font-medium mb-2 text-white">MESSAGE</label>
+              <textarea rows="4" placeholder="Type Here"
+                class="w-full bg-transparent border border-[#666666] rounded-lg px-4 py-3 text-xs font-normal focus:outline-none focus:border-[#666666] resize-none text-[#FFFFFF]"></textarea>
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit"
+              class="bg-white mt-6 text-xs font-medium px-16 py-3 rounded-md hover:bg-white/90 transition text-[#666666] footer-btn">
+              Send Message
+            </button>
+
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- BOTTOM LINKS -->
+    <div class="border-t-2 border-[#666666]/50 mt-12 mx-5">
+      <ul
+        class="flex flex-wrap gap-x-10 gap-y-4 text-[#FFFFFF] text-base font-normal justify-center lg:justify-between pt-[75px]">
+        <li>EdTechPlatform</li>
+        <li>LearnSmarter</li>
+        <li>DigitalEducation</li>
+        <li>SmartLearning</li>
+        <li>KnowledgePowered</li>
+        <li>FutureOfLearning</li>
+      </ul>
+      <!-- <div class="pt-5 pb-16">
+        <img src="./assets/img/learnexa footer.png" class="w-full" alt="">
+      </div> -->
+    </div>
+    <div class="pt-5 mx-5 overflow-hidden">
+      <p
+        class="xl:text-[147px] lg:text-6xl md:text-[132px] text-6xl xl:leading-[177px] lg:leading-[130px] md:leading-[159px] leading-[81px]  font-bold 2xl:tracking-[147px] xl:tracking-[65px] lg:tracking-[86px] md:tracking-[8px] tracking-[6px] text-[#F9F9F9] footer-big-text">
+        LEARNEXA</p>
+    </div>
+
+  </footer>
+  <!-- footer end -->
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle("hidden");
+
+      setTimeout(() => {
+        mobileMenu.classList.toggle("translate-y-[-20px]");
+        mobileMenu.classList.toggle("opacity-0");
+      }, 10);
+    }
+
+    menuBtn.addEventListener("click", toggleMenu);
+    closeBtn.addEventListener("click", toggleMenu);
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./assets/js/footer-animations.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+</head>
+
+
+<body class="overflow-x-hidden bg-cover bg-center bg-no-repeat bg-black"
+  style="background-image: url(./assets/img/backgroundbody.png);">
+  <header>
+    <div class="flex justify-between items-center 2xl:px-24 lg:px-10 px-5  pt-6 2xl:pt-[62px] lg:pt-9">
+      <!-- Logo -->
+      <div class="logo-shine">
+        <img src="./assets/img/logoimg.png" alt="Logo">
+      </div>
+
+
+      <!-- Menu (lg screens only) -->
+      <ul
+        class="hidden lg:flex text-[#646464] 2xl:gap-[73px] xl:gap-14 lg:gap-10  font-semibold 2xl:text-xl lg:text-xs lg:flex-row">
+        <li><a href="">PRODUCTS</a></li>
+        <li><a href="">SOLUTIONS</a></li>
+        <li><a href="">CUSTOMER</a></li>
+        <li><a href="">PRICING</a></li>
+        <li><a href="">RESOURCES</a></li>
+      </ul>
+
+      <!-- Register Button (LG+ only, original design) -->
+      <div class="hidden lg:block text-white">
+        <a href="">
+          <button class="btn-neon relative 2xl:text-xl lg:text-xs font-semibold px-6 py-2 rounded-2xl ">
+            REGISTER NOW <i class="fa-solid fa-arrow-right -rotate-45"></i>
+
+            <!-- Neon Border -->
+            <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+              <rect x="2" y="2" width="196" height="56" rx="16" ry="16"></rect>
+            </svg>
+          </button>
+        </a>
+      </div>
+
+
+      <!-- Toggle Button (mobile + md only) -->
+      <button id="menu-toggle" class="text-2xl text-gray-700 lg:hidden transition-transform duration-300">
+        <i id="menu-icon" class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile + md Dropdown Menu (Glass Effect + flex-col ul) -->
+    <div id="mobile-menu" class="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out 
+            backdrop-blur-md bg-white/40 shadow-lg rounded-2xl 
+            px-5 py-0 text-lg lg:hidden">
+
+      <ul class="flex flex-col gap-4 font-semibold">
+        <li><a href="" class="text-[#222]">PRODUCTS</a></li>
+        <li><a href="" class="text-[#222]">SOLUTIONS</a></li>
+        <li><a href="" class="text-[#222]">CUSTOMER</a></li>
+        <li><a href="" class="text-[#222]">PRICING</a></li>
+        <li><a href="" class="text-[#222]">RESOURCES</a></li>
+        <li>
+          <a href="">
+            <!-- Mobile/MD → White text only -->
+            <button class="text-xl font-semibold text-white">
+              REGISTER NOW
+              <i class="fa-solid fa-arrow-right -rotate-45 text-white"></i>
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <style>
+      /* Bounce keyframes */
+      @keyframes slideBounce {
+        0% {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+
+        60% {
+          transform: translateY(10px);
+          opacity: 1;
+        }
+
+        80% {
+          transform: translateY(-5px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+    </style>
+
+    <script>
+      const toggleBtn = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      toggleBtn.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("max-h-0")) {
+          // Open with bounce effect
+          mobileMenu.classList.remove("max-h-0", "opacity-0", "py-0");
+          mobileMenu.classList.add("max-h-[500px]", "opacity-100", "py-4");
+          mobileMenu.style.animation = "slideBounce 0.6s ease";
+
+          // Change icon to X
+          menuIcon.classList.remove("fa-bars");
+          menuIcon.classList.add("fa-xmark");
+        } else {
+          // Close
+          mobileMenu.classList.add("max-h-0", "opacity-0", "py-0");
+          mobileMenu.classList.remove("max-h-[500px]", "opacity-100", "py-4");
+          mobileMenu.style.animation = "";
+
+          // Back to bars
+          menuIcon.classList.remove("fa-xmark");
+          menuIcon.classList.add("fa-bars");
+        }
+      });
+    </script>
+
+    </div>
+  </header>
+
+  <section class="">
+    <div class="2xl:pt-24 lg:pt-12 pt-8 2xl:px-24 lg:px-10 px-5">
+      <div class="text-center">
+        <h1 class="bg-gradient-to-r 
+             from-[#FFFFFF] via-[#423F3F] to-[#FFFFFF] 
+             bg-clip-text text-transparent 2xl:text-[157px] lg:text-7xl md:text-6xl text-5xl font-bold 
+             2xl:leading-[198px]" id="animated-text">
+          Web3 Design
+          <br>
+          <span class="bg-gradient-to-r from-[#E2499F] to-[#F89B25] bg-clip-text text-transparent">Agency.</span>
+        </h1>
+      </div>
+
+    </div>
+    <div class="lg:flex justify-between 2xl:px-44 lg:px-10 px-5 2xl:pt-9 pt-12">
+      <div class="flex justify-center">
+        <div>
+          <div
+            class="flex lg:justify-start justify-center transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#000000">
+            <div class="2xl:py-9 2xl:px-9 px-5 py-5 w-fit 
+         2xl:rounded-[34px] rounded-2xl 
+         md:bg-white/10 md:backdrop-blur-md 
+         bg-white/10 backdrop-blur-md border-b border-r 
+         custom-glow">
+              <p class="text-white 2xl:text-5xl text-3xl font-normal">240+</p>
+              <p class="text-[#646464] 2xl:text-3xl xl:text-2xl lg:text-base text-2xl font-medium 2xl:pb-5 pt-2">
+                PARTNERS
+              </p>
+            </div>
+          </div>
+          <div class="transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#000000">
+            <div class="2xl:mt-24 lg:mt-12 mt-16 2xl:py-10 2xl:pl-9 pl-5 2xl:pr-20 pr-9 py-5 w-fit 
+         2xl:rounded-[34px] rounded-2xl 
+         md:bg-white/10 md:backdrop-blur-md 
+         bg-white/10 backdrop-blur-md border-b border-r 
+         inner-glow">
+              <p class="text-white 2xl:text-5xl text-3xl font-normal">92%</p>
+              <p class="text-[#646464] 2xl:text-xl xl:text-xl text-base font-normal 2xl:pt-6 pt-3">
+                FASTER TECNOLOGY
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative lg:mt-0 mt-5 overflow-hidden rounded-2xl">
+        <!-- Bubble background -->
+        <div class="bubbles">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Image -->
+        <img src="./assets/img/center img.png" class="relative z-10 2xl:w-full xl:w-[493px] lg:w-[400px]" alt="">
+      </div>
+
+      <div class="2xl:text-start lg:text-start text-center">
+        <p
+          class="text-[#646464] 2xl:text-xl xl:text-2xl lg:text-[16px] md:text-xl text-xs 2xl:leading-[54px] xl:leading-10 lg:leading-7 md:leading-9 leading-8 font-semibold">
+          Better data leads to more <br> performance
+          models. Performant <br> models lead to faster deployment.</p>
+        <button class="button-animation">
+          Get Started
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- slider -->
+    <div class="overflow-hidden relative w-full bg-[#272727B5] border-t -rotate-3 2xl:py-11 lg:py-6 py-5 lg:mt-0 mt-10">
+      <div class="flex animate-slide space-x-10">
+        <div class="flex gap-12">
+          <div class="flex items-center justify-center text-white text-4xl font-medium">Website Design
+          </div>
+          <div class="flex items-center justify-center">
+            <img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">Dashboard
+          </div>
+          <div class="flex items-center justify-center"><img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">NFT Art
+          </div>
+          <div class="flex items-center justify-center"><img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">Development
+          </div>
+        </div>
+        <div class="flex gap-12">
+          <div class="flex items-center justify-center"><img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">
+            Stertegy</div>
+          <div class="flex items-center justify-center"><img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">Motion Development
+          </div>
+          <div class="flex items-center justify-center"><img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">Website Design
+          </div>
+          <div class="flex items-center justify-center">
+            <img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">Dashboard
+          </div>
+          <div class="flex items-center justify-center"><img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">Development
+          </div>
+          <div class="flex items-center justify-center"><img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">
+            Stertegy</div>
+          <div class="flex items-center justify-center"><img src="./assets/img/Star 1.png" alt="">
+          </div>
+          <div class="flex items-center justify-center text-white text-4xl font-medium">Motion Development
+          </div>
+          <div class="flex items-center justify-center"><img src="./assets/img/Star 1.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <section>
+    <div class="2xl:pt-32 pt-20">
+      <h1 class="2xl:text-[112px] xl:text-6xl lg:text-5xl text-5xl text-center font-semibold text-white">Our Services
+      </h1>
+    </div>
+    <div class="w-full lg:flex justify-center 2xl:px-24 lg:px-10 px-5 2xl:pt-48 pt-16">
+      <!-- left side -->
+      <div class="lg:w-1/2">
+        <div class="lg:text-start text-center">
+          <div>
+            <h1 class="2xl:text-[85px] xl:text-5xl lg:text-4xl text-4xl font-bold text-white">UI/UX Design</h1>
+          </div>
+          <div class="2xl:pt-14 pt-7 text-white/50">
+            <p
+              class="2xl:text-xl xl:text-[15px] lg:text-xs text-xs 2xl:leading-[55px] xl:leading-9 lg:leading-7 leading-7 font-semibold">
+              Hands-on learning via real-life innovation projects. Save Rs
+              <br class="md:block hidden"> 8,210 On This Course. Create immersive UI
+              via wireframes. <br class="md:block hidden"> Conduct heuristic evaluations of your UX design.
+            </p>
+          </div>
+        </div>
+        <div class="2xl:pt-14 pt-7">
+          <div class="flex items-center gap-6 text-white/50">
+            <div>
+              <img src="./assets/img/ticky.png" class="2xl:w-full w-[30px]" alt="">
+            </div>
+            <div>
+              <p class="2xl:text-xl xl:text-[15px] lg:text-xs text-xs font-semibold">User Interface design</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-6 2xl:pt-9 pt-5 text-white/50">
+            <div>
+              <img src="./assets/img/ticky.png" class="2xl:w-full w-[30px]" alt="">
+            </div>
+            <div>
+              <p class="2xl:text-xl xl:text-base  lg:text-xs text-xs font-semibold">User Interface design</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-6 2xl:pt-9 pt-5 text-white/50">
+            <div>
+              <img src="./assets/img/ticky.png" class="2xl:w-full lg:w-[30px] w-[30px]" alt="">
+            </div>
+            <div>
+              <p class="2xl:text-xl xl:text-[15px] lg:text-xs text-xs font-semibold">User Interface design</p>
+            </div>
+          </div>
+          <div class=" md:text-start text-center">
+            <div
+              class="2xl:mt-[92px] mt-12 2xl:py-6 py-3 2xl:px-10 px-5 border-2 border-[#464646] inline-block rounded-full relative overflow-hidden">
+              <button class="2xl:text-3xl lg:text-xl text-xl font-semibold text-white relative z-10">
+                Learn More <i class="fa-solid fa-arrow-right -rotate-45"></i>
+              </button>
+              <div class="liquid"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- right side img -->
+      <div class="lg:w-1/2 relative flex justify-center items-center">
+        <div class="bg-bubbles"></div>
+        <img src="./assets/img/user.png" class="relative z-10" alt="">
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div
+      class="2xl:pt-52 xl:pt-28 pt-20 transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#000000">
+      <div
+        class="lg:flex md:grid grid-cols-2 justify-between text-white 2xl:px-44 lg:px-10 px-5 2xl:py-[91px] py-11 bg-[#D4D4D41A] border-t-2 border-b-2 border-[#464646] text-center">
+
+        <div class="lg:pt-0 pt-8">
+          <div>
+            <p data-target="5" data-suffix="M+"
+              class="counter 2xl:text-[77px] xl:text-6xl lg:text-4xl text-5xl font-medium">0</p>
+          </div>
+          <div>
+            <p class="2xl:text-3xl xl:text-xl lg:text-[14px] text-[18px] font-semibold text-white/50 pt-8">Customer</p>
+          </div>
+        </div>
+
+        <div class="lg:pt-0 pt-8">
+          <div>
+            <p data-target="450" data-suffix="M+"
+              class="counter 2xl:text-[77px] xl:text-6xl lg:text-4xl text-5xl font-medium">0</p>
+          </div>
+          <div>
+            <p class="2xl:text-3xl xl:text-xl lg:text-[14px] text-[18px] font-semibold text-white/50 pt-8">Overrange</p>
+          </div>
+        </div>
+
+        <div class="lg:pt-0 pt-8">
+          <div>
+            <p data-target="22" data-suffix="%"
+              class="counter 2xl:text-[77px] xl:text-6xl lg:text-4xl text-5xl font-medium">0</p>
+          </div>
+          <div>
+            <p class="2xl:text-3xl xl:text-xl lg:text-[14px] text-[18px] font-semibold text-white/50 pt-8">Earning</p>
+          </div>
+        </div>
+
+        <div class="lg:pt-0 pt-8">
+          <div>
+            <p data-target="8.03" data-decimal="true" data-suffix="%"
+              class="counter 2xl:text-[77px] xl:text-6xl lg:text-4xl text-5xl font-medium">0</p>
+          </div>
+          <div>
+            <p class="2xl:text-3xl xl:text-xl lg:text-[14px] text-[18px] font-semibold text-white/50 pt-8">Interest</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- slider -->
+  <section>
+    <div class="w-full px-5 overflow-x-hidden 2xl:pl-24 lg:pl-10 pl-5">
+      <div class="text-center">
+        <h1 id="customers-title" class="font-medium text-white 2xl:text-[112px] xl:text-6xl lg:text-5xl text-3xl 
+         text-center 2xl:pt-36 lg:pt-16 pt-11 pb-4 relative inline-block">
+          Our happy Customers
+          <span class="underline-animate"></span>
+        </h1>
+
+      </div>
+
+      <!-- Carousel Wrapper -->
+      <div class="relative 2xl:mt-48 xl:mt-28 lg:mt-20 mt-20">
+        <div id="cardSlider" class="flex transition-transform duration-500 space-x-6">
+
+          <!-- Testimonial Cards -->
+          <div class="min-w-[90%] md:min-w-[50%] lg:min-w-[45.33%] 2xl:min-w-[557px] 
+            h-[366px] bg-[#1c1c1c] text-white 
+            rounded-[20px] shadow-lg relative overflow-visible px-4 
+            shadow-[#43272d] border-t-2 border-l-2 border-r-2 border-b-2 
+            border-t-black border-l-black 
+            border-r-[#666666] border-b-[#666666]
+            transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#392227">
+
+            <div class="flex justify-center">
+              <div class="flex gap-4 absolute -top-10 bg-[#464646] py-3 px-4 rounded-full">
+                <img src="./assets/img/ladypics.png" class="">
+                <img src="./assets/img/ladypics.png" class="">
+              </div>
+            </div>
+
+            <img src="./assets/img/starsy.png" alt="" class="mt-24">
+            <div class="pt-9">
+              <p class="2xl:text-2xl xl:text-3xl lg:text-[22px] md:text-xl text-[17px] font-medium">
+                …suggests that the top planners spend most of their time engaged in analysis and are concerned with
+                industry.”
+              </p>
+              <p class="pt-7 text-2xl font-normal text-[#464646]">— Sabo Masties</p>
+            </div>
+          </div>
+
+
+          <div
+            class="min-w-[90%] md:min-w-[50%] lg:min-w-[45.33%] 2xl:min-w-[557px] 
+            h-[366px] bg-[#1c1c1c] text-white 
+            rounded-[20px] shadow-lg relative overflow-visible px-4 shadow-[#43272d] border-r-2 border-[#666666] border-b-2 transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#392227">
+            <div class="flex justify-center">
+              <div class="flex gap-4 absolute -top-10 bg-[#464646] py-3 px-4 rounded-full">
+                <img src="./assets/img/ladypics.png" class="">
+                <img src="./assets/img/ladypics.png" class="">
+              </div>
+            </div>
+            <img src="./assets/img/starsy.png" alt="" class="mt-24">
+            <div class="pt-9">
+              <p class="2xl:text-2xl xl:text-3xl lg:text-[22px] md:text-xl text-[17px] font-medium">
+                …suggests that the top planners spend most of their time engaged in analysis and are concerned with
+                industry.”
+              </p>
+              <p class="pt-7 text-2xl font-normal text-[#464646]">— Sabo Masties</p>
+            </div>
+          </div>
+
+          <div
+            class="min-w-[90%] md:min-w-[50%] lg:min-w-[45.33%] 2xl:min-w-[557px] 
+            h-[366px] bg-[#1c1c1c] text-white 
+            rounded-[20px] shadow-lg relative overflow-visible px-4 shadow-[#43272d] border-t-2 border-l-2 border-r-2 border-b-2 
+            border-t-black border-l-black 
+            border-r-[#666666] border-b-[#666666] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#392227">
+            <div class="flex justify-center">
+              <div class="flex gap-4 absolute -top-10 bg-[#464646] py-3 px-4 rounded-full">
+                <img src="./assets/img/ladypics.png" class="">
+                <img src="./assets/img/ladypics.png" class="">
+              </div>
+            </div>
+            <img src="./assets/img/starsy.png" alt="" class="mt-24">
+            <div class="pt-9">
+              <p class="2xl:text-2xl xl:text-3xl lg:text-[22px] md:text-xl text-[17px] font-medium">
+                …suggests that the top planners spend most of their time engaged in analysis and are concerned with
+                industry.”
+              </p>
+              <p class="pt-7 text-2xl font-normal text-[#464646]">— Sabo Masties</p>
+            </div>
+          </div>
+
+          <div
+            class="min-w-[90%] md:min-w-[50%] lg:min-w-[45.33%] 2xl:min-w-[557px] 
+            h-[366px] bg-[#1c1c1c] text-white 
+            rounded-[20px] shadow-lg relative overflow-visible px-4 shadow-[#43272d] border-t-2 border-l-2 border-r-2 border-b-2 
+            border-t-black border-l-black 
+            border-r-[#666666] border-b-[#666666] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#392227">
+            <div class="flex justify-center">
+              <div class="flex gap-4 absolute -top-10 bg-[#464646] py-3 px-4 rounded-full">
+                <img src="./assets/img/ladypics.png" class="">
+                <img src="./assets/img/ladypics.png" class="">
+              </div>
+            </div>
+            <img src="./assets/img/starsy.png" alt="" class="mt-24">
+            <div class="pt-9">
+              <p class="2xl:text-2xl xl:text-3xl lg:text-[22px] md:text-xl text-[17px] font-medium">
+                …suggests that the top planners spend most of their time engaged in analysis and are concerned with
+                industry.”
+              </p>
+              <p class="pt-7 text-2xl font-normal text-[#464646]">— Sabo Masties</p>
+            </div>
+          </div>
+
+          <div
+            class="min-w-[90%] md:min-w-[50%] lg:min-w-[45.33%] 2xl:min-w-[557px] 
+            h-[366px] bg-[#1c1c1c] text-white 
+            rounded-[20px] shadow-lg relative overflow-visible px-4 shadow-[#43272d] border-t-2 border-l-2 border-r-2 border-b-2 
+            border-t-black border-l-black 
+            border-r-[#666666] border-b-[#666666] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#392227">
+            <div class="flex justify-center">
+              <div class="flex gap-4 absolute -top-10 bg-[#464646] py-3 px-4 rounded-full">
+                <img src="./assets/img/ladypics.png" class="">
+                <img src="./assets/img/ladypics.png" class="">
+              </div>
+            </div>
+            <img src="./assets/img/starsy.png" alt="" class="mt-24">
+            <div class="pt-9">
+              <p class="2xl:text-2xl xl:text-3xl lg:text-[22px] md:text-xl text-[17px] font-medium">
+                …suggests that the top planners spend most of their time engaged in analysis and are concerned with
+                industry.”
+              </p>
+              <p class="pt-7 text-2xl font-normal text-[#464646]">— Sabo Masties</p>
+            </div>
+          </div>
+
+          <div
+            class="min-w-[90%] md:min-w-[50%] lg:min-w-[45.33%] 2xl:min-w-[557px] 
+            h-[366px] bg-[#1c1c1c] text-white 
+            rounded-[20px] shadow-lg relative overflow-visible px-4 shadow-[#43272d] border-t-2 border-l-2 border-r-2 border-b-2 
+            border-t-black border-l-black 
+            border-r-[#666666] border-b-[#666666] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#392227">
+            <div class="flex justify-center">
+              <div class="flex gap-4 absolute -top-10 bg-[#464646] py-3 px-4 rounded-full">
+                <img src="./assets/img/ladypics.png" class="">
+                <img src="./assets/img/ladypics.png" class="">
+              </div>
+            </div>
+            <img src="./assets/img/starsy.png" alt="" class="mt-24">
+            <div class="pt-9">
+              <p class="2xl:text-2xl xl:text-3xl lg:text-[22px] md:text-xl text-[17px] font-medium">
+                …suggests that the top planners spend most of their time engaged in analysis and are concerned with
+                industry.”
+              </p>
+              <p class="pt-7 text-2xl font-normal text-[#464646]">— Sabo Masties</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dots -->
+        <div class="flex justify-center 2xl:pt-28 lg:pt-12 pt-12 gap-6">
+          <div
+            class="lg:w-[70px] w-10 lg:h-3 h-2 rounded-full bg-[#D9D9D9] cursor-pointer dot transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#000000">
+          </div>
+          <div
+            class="lg:w-[70px] w-10 lg:h-3 h-2 rounded-full bg-[#D9D9D9] cursor-pointer dot active-dot transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#000000">
+          </div>
+          <div
+            class="lg:w-[70px] w-10 lg:h-3 h-2 rounded-full bg-[#D9D9D9] cursor-pointer dot transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#000000">
+          </div>
+          <div
+            class="lg:w-[70px] w-10 lg:h-3 h-2 rounded-full bg-[#D9D9D9] cursor-pointer dot transform transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_#000000">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="lg:flex justify-between items-center 2xl:px-24 lg:px-10 px-5 2xl:pt-40 pt-20">
+      <div>
+        <div class="flex lg:justify-start justify-center">
+          <img src="./assets/img/logoimg.png" alt="">
+        </div>
+        <div class="2xl:pt-14 pt-7">
+          <p
+            class="2xl:text-2xl xl:text-[17px] text-xs font-bold 2xl:leading-[44px] xl:leading-7 leading-6 text-white/50 lg:text-start text-center">
+            Cryptocurrency is a type of virtual currency that uses <br> cryptography to secure transactions that are
+            digitally <br>recorded on a distributed ledger, such as blockchain.</p>
+        </div>
+        <div class="2xl:pt-[93px] pt-12 flex gap-5 lg:justify-start justify-center">
+          <a href="#" class="icon-wrapper">
+            <img src="./assets/img/instagram.png" class="2xl:w-full lg:w-10 w-8" alt="">
+          </a>
+          <a href="#" class="icon-wrapper">
+            <img src="./assets/img/facebook.png" class="2xl:w-full lg:w-10 w-8" alt="">
+          </a>
+          <a href="#" class="icon-wrapper">
+            <img src="./assets/img/twitter.png" class="2xl:w-full lg:w-10 w-8" alt="">
+          </a>
+        </div>
+
+
+      </div>
+
+      <div class="text-white 2xl:pt-32 lg:pt-20 pt-12 lg:text-start text-center">
+        <div>
+          <p class="2xl:text-3xl xl:text-3xl lg:text-xl text-2xl leading-[44px] font-bold">Useful Link</p>
+        </div>
+        <div class="2xl:pt-10 pt-6">
+          <a href="">
+            <p class="2xl:text-2xl xl:text-xl lg:text-xs text-xl 2xl:leading-[44px] leading-6 font-semibold">ios apps
+            </p>
+          </a>
+          <a href="">
+            <p
+              class="2xl:text-2xl xl:text-xl lg:text-xs text-xl 2xl:leading-[44px] leading-6 font-semibold 2xl:pt-6 pt-5">
+              Contact Us</p>
+          </a>
+          <a href="">
+            <p
+              class="2xl:text-2xl xl:text-xl lg:text-xs text-xl 2xl:leading-[44px] leading-6 font-semibold 2xl:pt-6 pt-5">
+              Terms & Condition</p>
+          </a>
+          <a href="">
+            <p
+              class="2xl:text-2xl xl:text-xl lg:text-xs text-xl 2xl:leading-[44px] leading-6 font-semibold 2xl:pt-6 pt-5">
+              Privacy</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:text-start text-center">
+        <div class=" xl:pt-10 lg:pt-[70px] pt-10">
+          <p class="2xl:text-3xl xl:text-3xl lg:text-xl text-2xl leading-[44px] font-bold text-white">Contact Us</p>
+        </div>
+        <div>
+          <a href="">
+            <p
+              class="2xl:text-2xl xl:text-xl lg:text-[17px] text-xl 2xl:leading-[44px] leading-6 font-semibold text-white/50 pt-8">
+              📞 +91 8347124540</p>
+          </a>
+          <a href="">
+            <p
+              class="2xl:text-2xl xl:text-xl lg:text-[17px] text-xl 2xl:leading-[44px] leading-6 font-semibold text-white/50 pt-5">
+              ✉️ nisharmultan007@gmail.com</p>
+          </a>
+          <p
+            class="2xl:text-2xl xl:text-xl lg:text-[17px] text-[18px] 2xl:leading-[44px] leading-6 font-semibold text-white/50 pt-5">
+            📍 Elgin St. Celina, Delaware 10299</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <hr class="my-8">
+
+
+
+
+
+
+  <!-- slider -->
+  <script>
+    const cardSlider = document.getElementById("cardSlider");
+    const cardDots = document.querySelectorAll(".dot");
+    let cardIndex = 0;
+
+    function updateCardSlider() {
+      const screenWidth = window.innerWidth;
+      let shiftPercent;
+
+      if (screenWidth < 768) {
+        // Mobile (sm) → 1 card
+        shiftPercent = 100;
+      } else if (screenWidth < 1024) {
+        // Tablet (md) → 2 card
+        shiftPercent = 50;
+      } else if (screenWidth < 1536) {
+        // Large (lg) → 3 card
+        shiftPercent = 33.33;
+      } else {
+        // 2xl → 557px width cards, approx 3 at a time
+        shiftPercent = 33.33; // same percentage scroll for 3 visible
+      }
+
+      cardSlider.style.transform = `translateX(-${cardIndex * shiftPercent}%)`;
+
+      cardDots.forEach(dot => dot.classList.remove("active-dot"));
+      if (cardDots[cardIndex]) {
+        cardDots[cardIndex].classList.add("active-dot");
+      }
+    }
+
+    // Dot click
+    cardDots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        cardIndex = i;
+        updateCardSlider();
+      });
+    });
+
+    // Resize → recalc
+    window.addEventListener("resize", updateCardSlider);
+
+    updateCardSlider();
+  </script>
+
+
+
+  <!-- counter -->
+  <script>
+    function animateCounter(el) {
+      const target = parseFloat(el.getAttribute("data-target"));
+      const suffix = el.getAttribute("data-suffix") || "";
+      const isDecimal = el.getAttribute("data-decimal") === "true";
+      let count = 0;
+      const duration = 2000; // 2 sec
+      const stepTime = 20;
+      const steps = duration / stepTime;
+      const increment = target / steps;
+
+      const timer = setInterval(() => {
+        count += increment;
+        if (count >= target) {
+          clearInterval(timer);
+          el.textContent = (isDecimal ? target.toFixed(2) : Math.floor(target)) + suffix;
+        } else {
+          el.textContent = isDecimal
+            ? count.toFixed(2) + suffix
+            : Math.floor(count) + suffix;
+        }
+      }, stepTime);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".counter").forEach(animateCounter);
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "top 80%",
+      },
+      rotationY: 90,   // 3D flip
+      transformOrigin: "left center",
+      opacity: 0,
+      duration: 1.2,
+      ease: "back.out(1.7)"
+    });
+  </script>
+  <script>
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+      },
+      x: -150,
+      skewX: 20,
+      opacity: 0,
+      duration: 1.3,
+      ease: "elastic.out(1, 0.5)"
+    });
+
+  </script>
+
+  <script>
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+      },
+      scale: 0.5,
+      rotationX: 90,
+      transformOrigin: "center bottom",
+      opacity: 0.7,
+      duration: 1.5,
+      ease: "power4.out"
+    });
+
+  </script>
+
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const effects = [
+      { rotationY: 90, transformOrigin: "left center", opacity: 0, duration: 1.2, ease: "back.out(1.7)" },
+      { x: -150, skewX: 20, opacity: 0, duration: 1.3, ease: "elastic.out(1, 0.5)" },
+      { scale: 0.5, rotationX: 90, transformOrigin: "center bottom", opacity: 0.7, duration: 1.5, ease: "power4.out" }
+    ];
+
+    document.querySelectorAll("section, .lg\\:w-1\\/2, header, footer").forEach((el, i) => {
+      let effect = effects[i % effects.length];
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+        },
+        ...effect
+      });
+    });
+
+  </script>
+
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // TEXT divs (shatter effect)
+    document.querySelectorAll(".anim-text").forEach((el) => {
+      let chars = el.textContent.split("");
+      el.innerHTML = chars.map(c => `<span class="char">${c}</span>`).join("");
+
+      gsap.from(el.querySelectorAll(".char"), {
+        scrollTrigger: { trigger: el, start: "top 80%" },
+        y: gsap.utils.wrap([-80, 80]),
+        x: gsap.utils.wrap([-50, 50]),
+        rotate: () => gsap.utils.random(-60, 60),
+        opacity: 0,
+        duration: 1.5,
+        ease: "elastic.out(1, 0.6)",
+        stagger: 0.04
+      });
+    });
+
+    // IMAGE divs (3D flip + scale in)
+    gsap.utils.toArray(".anim-img").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: "top 85%" },
+        opacity: 0,
+        rotateY: 120,
+        scale: 0.6,
+        duration: 1.3,
+        ease: "back.out(1.7)"
+      });
+    });
+
+    // BUTTON divs (pulse + bounce in)
+    gsap.utils.toArray(".anim-btn").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: { trigger: el, start: "top 90%" },
+        opacity: 0,
+        scale: 0,
+        rotate: -180,
+        duration: 1.2,
+        ease: "bounce.out"
+      });
+
+      // Hover par glow pulse
+      el.addEventListener("mouseenter", () => {
+        gsap.to(el, { scale: 1.1, duration: 0.3, yoyo: true, repeat: 1 });
+      });
+    });
+  </script>
+
+
+
+  <script>
+    // Example: 2nd section ki text div
+    gsap.from(".second-section .anim-text", {
+      scrollTrigger: { trigger: ".second-section", start: "top 85%" },
+      opacity: 0,
+      y: 60,
+      duration: 0.7,  // 👈 thoda fast kar diya (pehle 1.2s hota)
+      ease: "power3.out"
+    });
+
+    // 2nd section image
+    gsap.from(".second-section .anim-img", {
+      scrollTrigger: { trigger: ".second-section", start: "top 85%" },
+      opacity: 0,
+      scale: 0.7,
+      duration: 0.8, // 👈 fast
+      ease: "back.out(1.7)"
+    });
+
+    // 2nd section button
+    gsap.from(".second-section .anim-btn", {
+      scrollTrigger: { trigger: ".second-section", start: "top 90%" },
+      opacity: 0,
+      y: 40,
+      duration: 0.6, // 👈 thoda aur tez
+      ease: "power2.out"
+    });
+
+  </script>
+
+
+  <!-- footer -->
+  <script>
+    var heartContainer = document.getElementsByClassName('icon-wrapper');
+
+    Object.keys(heartContainer).forEach(singleElement => {
+
+      heartContainer[singleElement].addEventListener('click', function () {
+        if (heartContainer[singleElement].classList.contains('liked')) {
+          heartContainer[singleElement].classList.add('unliked');
+          heartContainer[singleElement].classList.remove('liked');
+          setTimeout(unlikeRemover, 250);
+        }
+        else {
+          heartContainer[singleElement].classList.add('liked');
+          heartContainer[singleElement].classList.remove('unliked');
+        }
+
+        function unlikeRemover() {
+          heartContainer[singleElement].classList.remove('unliked');
+        }
+      });
+
+    });
+  </script>
+
+
+
+
+<script>
+  const title = document.getElementById("customers-title");
+  const underline = title.querySelector(".underline-animate");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        underline.classList.add("active");
+        observer.unobserve(entry.target); // ek hi bar trigger hoga
+      }
+    });
+  }, { threshold: 0.5 }); // 50% visible hone par trigger hoga
+
+  observer.observe(title);
+</script>
+
+</body>
+
+</html>
