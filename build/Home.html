@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-[#070A12] text-white">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
+
+        <div class="flex justify-between items-center xl:px-20 lg:px-10 px-5 py-6">
+
+            <!-- LOGO -->
+            <h1 class="font-bold tracking-widest text-purple-300 text-xl">
+                PORTFOLIO
+            </h1>
+
+            <!-- DESKTOP NAV -->
+            <nav class="hidden lg:flex  space-x-8 text-gray-300">
+                <a href="./Home.html" class="hover:text-white transition">Home</a>
+                <a href="./Explore.html" class="hover:text-white transition">Explore</a>
+                <a href="./Create.html" class="hover:text-white transition">Create</a>
+                <a href="./Contact.html" class="hover:text-white transition">Contact</a>
+            </nav>
+
+            <!-- DESKTOP BUTTON -->
+            <button class="hidden lg:block px-5 py-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-sm">
+                Connect wallet
+            </button>
+
+            <!-- TOGGLE BUTTON -->
+            <button id="menuBtn" class="lg:hidden text-white text-3xl transition">
+                <span id="icon">☰</span>
+            </button>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="lg:hidden flex flex-col gap-4 text-gray-300 bg-black/40 backdrop-blur-xl
+  overflow-hidden max-h-0 transition-all duration-500 ease-in-out text-center">
+
+            <div class="px-5 py-4 flex flex-col gap-4">
+
+                <a href="#projects" class="hover:text-white">Home</a>
+                <a href="#projects" class="hover:text-white">Explore</a>
+                <a href="#about" class="hover:text-white">Create</a>
+                <a href="#contact" class="hover:text-white">Contact</a>
+
+                <button
+                    class="mt-3 px-5 py-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-sm w-fit mx-auto">
+                    Connect wallet
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="bg-animation">
+        <div class="light"></div>
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <section class="xl:px-20 lg:px-10 px-5 pt-36 overflow-hidden">
+
+        <div
+            class="relative max-w-[1400px] mx-auto rounded-[40px] overflow-hidden border border-white/10 h-[750px] shadow-[0_0_100px_rgba(168,85,247,.25)]">
+
+            <!-- SLIDES -->
+            <div id="slides" class="flex w-[400%] h-full transition-all duration-1000">
+
+                <!-- SLIDE 1 -->
+                <div class="w-full h-full relative">
+
+                    <img src="assets/img/neomoon.png" class="w-full h-full object-cover">
+
+                    <div class="absolute inset-0 bg-black/50"></div>
+
+                    <div class="absolute z-10 top-1/2 left-10 md:left-20 -translate-y-1/2 max-w-[700px]">
+
+                        <p class="text-purple-300 uppercase tracking-[5px] mb-5">
+                            Modern Website
+                        </p>
+
+                        <h1 class="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-black leading-tight">
+
+                            Build Premium <br>
+                            Digital Experience
+
+                        </h1>
+
+                        <p class="text-gray-300 text-lg leading-8 mt-7 max-w-[600px]">
+
+                            Modern responsive websites with smooth
+                            animations and premium UI design.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-5 mt-10">
+
+                            <a href="#"
+                                class="px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 font-semibold hover:scale-105 transition duration-300">
+
+                                Explore Now
+
+                            </a>
+
+                            <a href="#"
+                                class="px-8 py-4 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl">
+
+                                View Projects
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="w-full h-full relative">
+
+                    <img src="./assets/img/neomoon.png" class="w-full h-full object-cover">
+
+                    <div class="absolute inset-0 bg-black/50"></div>
+
+                    <div class="absolute z-10 top-1/2 left-10 md:left-20 -translate-y-1/2 max-w-[700px]">
+
+                        <p class="text-pink-300 uppercase tracking-[5px] mb-5">
+                            Creative Design
+                        </p>
+
+                        <h1 class="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-black leading-tight">
+
+                            Futuristic <br>
+                            Web Interface
+
+                        </h1>
+
+                        <p class="text-gray-300 text-lg leading-8 mt-7 max-w-[600px]">
+
+                            Premium layouts crafted with Tailwind CSS
+                            and immersive frontend experiences.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="w-full h-full relative">
+
+                    <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?q=80&w=1600&auto=format&fit=crop"
+                        class="w-full h-full object-cover">
+
+                    <div class="absolute inset-0 bg-black/50"></div>
+
+                    <div class="absolute z-10 top-1/2 left-10 md:left-20 -translate-y-1/2 max-w-[700px]">
+
+                        <p class="text-blue-300 uppercase tracking-[5px] mb-5">
+                            Frontend Developer
+                        </p>
+
+                        <h1 class="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-black leading-tight">
+
+                            Responsive <br>
+                            Modern Websites
+
+                        </h1>
+
+                        <p class="text-gray-300 text-lg leading-8 mt-7 max-w-[600px]">
+
+                            Creating clean responsive layouts with
+                            modern UI and smooth effects.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- SLIDE 4 -->
+                <div class="w-full h-full relative">
+
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop"
+                        class="w-full h-full object-cover">
+
+                    <div class="absolute inset-0 bg-black/50"></div>
+
+                    <div class="absolute z-10 top-1/2 left-10 md:left-20 -translate-y-1/2 max-w-[700px]">
+
+                        <p class="text-green-300 uppercase tracking-[5px] mb-5">
+                            Development
+                        </p>
+
+                        <h1 class="xl:text-7xl lg:text-6xl md:text-5xl text-4xl font-black leading-tight">
+
+                            Premium <br>
+                            Coding Experience
+
+                        </h1>
+
+                        <p class="text-gray-300 text-lg leading-8 mt-7 max-w-[600px]">
+
+                            Fast modern websites with clean code and
+                            futuristic design system.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- =========================
+SECTION 1
+========================= -->
+    <section class="xl:px-20 lg:px-10 px-5 py-28">
+
+        <div class="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- IMAGE -->
+            <div class="relative group scroll-circle-animation">
+
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-[80px] rounded-[40px]">
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1600&auto=format&fit=crop"
+                    class="relative rounded-[40px] border border-white/10 transition duration-700">
+
+            </div>
+
+            <!-- TEXT -->
+            <div>
+
+                <p class="text-purple-300 uppercase tracking-[5px] mb-4">
+                    Creative Studio
+                </p>
+
+                <h2 class="xl:text-6xl lg:text-5xl text-4xl font-black leading-tight">
+
+                    We Create <br>
+
+                    <span class="bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">
+                        Premium UI Design
+                    </span>
+
+                </h2>
+
+                <p class="text-gray-400 text-lg leading-8 mt-8">
+
+                    Designing futuristic interfaces with modern
+                    layouts, smooth interactions and responsive
+                    frontend development.
+
+                </p>
+
+                <div class="flex gap-5 mt-10 flex-wrap">
+
+                    <div class="glass border border-white/10 rounded-2xl px-6 py-5">
+
+                        <h3 class="text-3xl font-bold">20+</h3>
+                        <p class="text-gray-400 mt-2">
+                            Projects
+                        </p>
+
+                    </div>
+
+                    <div class="glass border border-white/10 rounded-2xl px-6 py-5">
+
+                        <h3 class="text-3xl font-bold">100%</h3>
+                        <p class="text-gray-400 mt-2">
+                            Responsive
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================
+SECTION 2
+========================= -->
+    <section class="xl:px-20 lg:px-10 px-5 pb-28 overflow-hidden">
+
+        <div class="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- TEXT -->
+            <div>
+
+                <p class="text-pink-300 uppercase tracking-[5px] mb-4">
+                    Modern Experience
+                </p>
+
+                <h2 class="xl:text-6xl lg:text-5xl text-4xl font-black leading-tight">
+
+                    Clean Code & <br>
+
+                    <span class="bg-gradient-to-r from-pink-400 to-blue-400 text-transparent bg-clip-text">
+                        Smooth UI Experience
+                    </span>
+
+                </h2>
+
+                <p class="text-gray-400 text-lg leading-8 mt-8">
+
+                    Building responsive and premium frontend layouts
+                    using HTML, CSS, JavaScript and Tailwind CSS.
+
+                </p>
+
+                <div class="space-y-5 mt-10">
+
+                    <div
+                        class="glass border border-white/10 rounded-2xl p-6 hover:translate-x-3 transition duration-500">
+
+                        <h3 class="text-xl font-semibold mb-2">
+                            UI/UX Design
+                        </h3>
+
+                        <p class="text-gray-400">
+                            Premium modern layout design.
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="glass border border-white/10 rounded-2xl p-6 hover:translate-x-3 transition duration-500">
+
+                        <h3 class="text-xl font-semibold mb-2">
+                            Frontend Development
+                        </h3>
+
+                        <p class="text-gray-400">
+                            Clean responsive website development.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- IMAGE -->
+            <div class="relative group">
+
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-pink-500/20 blur-[80px] rounded-[40px]">
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop"
+                    class="relative rounded-[40px] border border-white/10 group-hover:scale-[1.03] transition duration-700">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="cursor"></div>
+    <div class="cursor-ring"></div>
+
+
+
+    <!-- background animation -->
+    <style>
+        /* body bacground animation  */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #050816;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* FULL SCREEN ANIMATION */
+        .bg-animation {
+            position: fixed;
+            inset: 0;
+            z-index: -999;
+            overflow: hidden;
+            background: linear-gradient(125deg, #050816, #0b1023, #111827);
+        }
+
+        /* ANIMATED WAVES */
+        .bg-animation span {
+            position: absolute;
+            display: block;
+            border-radius: 45%;
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+        }
+
+        .bg-animation span:nth-child(1) {
+            width: 900px;
+            height: 900px;
+            left: -200px;
+            background: rgba(168, 85, 247, 0.18);
+            animation-duration: 30s;
+        }
+
+        .bg-animation span:nth-child(2) {
+            width: 700px;
+            height: 700px;
+            right: -150px;
+            background: rgba(236, 72, 153, 0.15);
+            animation-duration: 22s;
+        }
+
+        .bg-animation span:nth-child(3) {
+            width: 600px;
+            height: 600px;
+            left: 35%;
+            background: rgba(59, 130, 246, 0.12);
+            animation-duration: 18s;
+        }
+
+        .bg-animation span:nth-child(4) {
+            width: 500px;
+            height: 500px;
+            left: 60%;
+            background: rgba(255, 255, 255, 0.05);
+            animation-duration: 26s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-1200px) rotate(720deg);
+            }
+        }
+
+        /* GLOW LIGHT */
+        .light {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(168, 85, 247, .25), transparent 20%),
+                radial-gradient(circle at 80% 40%, rgba(236, 72, 153, .2), transparent 20%),
+                radial-gradient(circle at 50% 80%, rgba(59, 130, 246, .15), transparent 25%);
+            filter: blur(60px);
+            animation: pulse 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: .7;
+            }
+
+            100% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- toggle  -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const icon = document.getElementById("icon");
+
+        let open = false;
+
+        menuBtn.addEventListener("click", () => {
+            open = !open;
+
+            if (open) {
+                mobileMenu.style.maxHeight = "300px";
+                icon.innerHTML = "✕"; // cross icon
+            } else {
+                mobileMenu.style.maxHeight = "0px";
+                icon.innerHTML = "☰"; // menu icon
+            }
+        });
+    </script>
+
+    <!-- cursor -->
+    <script>
+        const cursor = document.querySelector(".cursor");
+        const ring = document.querySelector(".cursor-ring");
+
+        let mouseX = 0;
+        let mouseY = 0;
+
+        let cursorX = 0;
+        let cursorY = 0;
+
+        let ringX = 0;
+        let ringY = 0;
+
+        window.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+
+            // MAIN CURSOR (fast follow)
+            cursorX += (mouseX - cursorX) * 0.25;
+            cursorY += (mouseY - cursorY) * 0.25;
+
+            cursor.style.left = cursorX + "px";
+            cursor.style.top = cursorY + "px";
+
+            // RING (slow smooth follow)
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+
+            ring.style.left = ringX + "px";
+            ring.style.top = ringY + "px";
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
+
+        // TRAIL EFFECT
+        window.addEventListener("mousemove", (e) => {
+            const trail = document.createElement("div");
+            trail.className = "trail";
+
+            trail.style.left = e.clientX + "px";
+            trail.style.top = e.clientY + "px";
+
+            document.body.appendChild(trail);
+
+            setTimeout(() => trail.remove(), 600);
+        });
+
+        // HOVER EFFECT
+        document.querySelectorAll("a, button, .glass").forEach(el => {
+
+            el.addEventListener("mouseenter", () => {
+                ring.style.width = "100px";
+                ring.style.height = "100px";
+            });
+
+            el.addEventListener("mouseleave", () => {
+                ring.style.width = "60px";
+                ring.style.height = "60px";
+            });
+
+        });
+    </script>
+    <style>
+        /* loading page animation  */
+        /* HIDE DEFAULT CURSOR */
+        body {
+            cursor: none;
+        }
+
+        /* MAIN CURSOR */
+        .cursor {
+            position: fixed;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            transition: transform .08s linear;
+            box-shadow:
+                0 0 10px #fff,
+                0 0 25px #a855f7,
+                0 0 50px #ec4899;
+        }
+
+        /* CURSOR RING */
+        .cursor-ring {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition:
+                width .25s ease,
+                height .25s ease,
+                border .25s ease,
+                transform .12s ease-out;
+            backdrop-filter: blur(3px);
+        }
+
+        /* TRAIL */
+        .trail {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            pointer-events: none;
+            background: rgba(168, 85, 247, .5);
+            z-index: 99997;
+            filter: blur(2px);
+            animation: trailFade .6s linear forwards;
+        }
+
+        @keyframes trailFade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        /* HOVER EFFECT */
+        a:hover~.cursor-ring,
+        button:hover~.cursor-ring {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</body>
+
+</html>

@@ -75,10 +75,10 @@
 
       <!-- DESKTOP NAV -->
       <nav class="hidden lg:flex  space-x-8 text-gray-300">
-        <a href="#projects" class="hover:text-white transition">Home</a>
-        <a href="#projects" class="hover:text-white transition">Explore</a>
-        <a href="#about" class="hover:text-white transition">Create</a>
-        <a href="#contact" class="hover:text-white transition">Contact</a>
+        <a href="./Home.html" class="hover:text-white transition">Home</a>
+        <a href="./Explore.html" class="hover:text-white transition">Explore</a>
+        <a href="./Create.html" class="hover:text-white transition">Create</a>
+        <a href="./Contact.html" class="hover:text-white transition">Contact</a>
       </nav>
 
       <!-- DESKTOP BUTTON -->
@@ -122,11 +122,27 @@
   <!-- HERO -->
   <section class="flex items-center justify-center xl:pt-56 lg:pt-40 pt-36 xl:px-20 lg:px-10 px-5 ">
 
-    <div
-      class="w-full max-w-[1100px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(168,85,247,0.25)]">
+    <div class="relative w-full max-w-[1100px] rounded-3xl overflow-hidden border border-white/10">
 
+      <!-- IMAGE -->
       <img src="assets/img/ChatGPT Image May 6, 2026, 02_55_56 PM.png"
         class="w-full xl:h-full lg:h-[520px] h-[181px] sm:h-[400px] md:h-[382px] object-cover" />
+
+      <!-- BORDER SCANNER -->
+      <svg class="absolute inset-0 w-full h-full pointer-events-none">
+        <rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)" rx="24" ry="24" fill="none"
+          stroke="url(#grad)" stroke-width="2" stroke-dasharray="30 900">
+          <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="3s" repeatCount="indefinite" />
+        </rect>
+
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a855f7" />
+            <stop offset="50%" stop-color="#3b82f6" />
+            <stop offset="100%" stop-color="#ec4899" />
+          </linearGradient>
+        </defs>
+      </svg>
 
     </div>
 
@@ -311,6 +327,7 @@
 
 
 
+
   <!-- slider  -->
   <script>
     const track = document.getElementById("track");
@@ -348,7 +365,7 @@
 
     document.querySelectorAll('.fade').forEach(el => observer.observe(el));
   </script>
-
+  <!-- loading  -->
   <script>
     // LOADER HIDE
     window.addEventListener("load", () => {
@@ -388,7 +405,7 @@
       }
     });
   </script>
-
+  <!-- background animation -->
   <style>
     /* body bacground animation  */
     body {
